@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './node_modules/compass-mixins/lib/compass/_css3.scss';
+
+
+
+
+// The micro clearfix
+// ------------------
+@mixin clearfix {
+  *zoom:1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.link-effect-selector{
+  a {
+    padding: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    @include transition(.3s ease-out);
+    span{
+      &::before{
+        width: 5px;
+        height: 5px;
+        background: transparent;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        @include transition (.3s);
+        opacity: 0;
+      }
+      &::after{
+        width: 5px;
+        height: 5px;
+        background: transparent;
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        @include transition (.3s);
+        opacity: 0;
+      }
+    }
+    &::before {
+      width: 5px;
+      height: 5px;
+      background: transparent;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-right: 2px solid white;
+      border-top: 2px solid white;
+      @include transition (.3s);
+      opacity: 0;
+    }
+    &::after {
+      width: 5px;
+      height: 5px;
+      background: transparent;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-left: 2px solid white;
+      border-bottom: 2px solid white;
+      @include transition (.3s);
+      opacity: 0;
+    }
+    &:hover{
+      color: white;
+      &::before{
+        opacity: 1;
+        right: 5px;
+        top: 5px;
+      }
+      &::after{
+        opacity: 1;
+        left: 5px;
+        bottom: 5px;
+      }
+      span{
+        &::before{
+          opacity: 1;
+          left: 5px;
+          top: 5px;
+        }
+        &::after{
+          opacity: 1;
+          right: 5px;
+          bottom: 5px;
+        }
+      }
+    }
+  }
+  .nuxt-link-exact-active {
+    color: white;
+    &::before{
+      opacity: 1;
+      right: 5px;
+      top: 5px;
+    }
+    &::after{
+      opacity: 1;
+      left: 5px;
+      bottom: 5px;
+    }
+    span{
+      &::before{
+        opacity: 1;
+        left: 5px;
+        top: 5px;
+      }
+      &::after{
+        opacity: 1;
+        right: 5px;
+        bottom: 5px;
+      }
+    }
+  }
+}
+
+.menu-fade-enter-active {
+  animation: fade-in 0.5s;
+}
+.menu-fade-leave-active {
+  animation: fade-in 0.5s reverse;
+}
+
+.menu-fade-leave-active,
+.menu-fade-enter-active {
+  transition: 1s;
+}
+.menu-fade-enter {
+  transform: translate(100%, 0);
+}
+.menu-fade-leave-to {
+  transform: translate(-100%, 0);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+a {
+  .blob{
+    height: 150px;
+    width: 200px;
+    margin: -10px auto;
+    position: absolute;
+    border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;
+    animation: example 10s ease-in-out 0s infinite alternate;
+    z-index: -1;
+  }
+}
+
+@keyframes example {
+  0%   {
+    border-radius: 67% 33% 75% 25% / 34% 22% 78% 66% ;
+    transform: translateY(-20px);
+  }
+  33%   {border-radius: 48% 52% 62% 38% / 57% 46% 54% 43% ;}
+  66%   {border-radius: 24% 76% 45% 55% / 54% 77% 23% 46% ;}
+  100% {border-radius: 33% 67% 54% 46% / 61% 39% 61% 39% ;
+    transform: translateY(20px);
+  }
+}
+
+.nuxt-content-editor{
+  @apply bg-gray-200;
+  @apply text-gray-900;
+}
