@@ -18,7 +18,7 @@ var json = {...};
 var jsonDeserializeObject = JsonConvert.DeserializeObject<Object>(json);
 ```
 
-<PostImage src="example.png" alt="example" class="w-64" />
+<PostImage src="example.png" alt="example" class="w-64"></PostImage>
 
 # Example Title 1
 
