@@ -4,7 +4,7 @@
     <!-- Introduction -->
     <section class="flex flex-col text-center w-full mb-12 text-white space-y-2">
       <h1 class="text-4xl font-medium">Hello! 👋</h1>
-      <p class="text-xl">My name is <span class="text-indigo-500">Joey</span> and I am a software developer from the Netherlands.</p>
+      <p class="text-xl">My name is <span class="text-indigo-500">{{$config.PORTFOLIO_NAME}}</span> and I am a software developer from the Netherlands.</p>
       <p class="text-xl">I mostly consume
         <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" class="border-dotted border-b border-indigo-500 transition ease-in-out hover:bg-indigo-500 duration-300">C#</a>
         and

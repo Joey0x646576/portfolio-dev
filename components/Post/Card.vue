@@ -8,7 +8,7 @@
             <span class="uppercase font-bold text-gray-700">{{post.category}}</span>
             <PostDate :created-at="post.createdAt" class="text-gray-500 text-sm mt-1"/>
             <nuxt-link :to="{ name: 'posts-slug', params: { slug: post.slug } }">
-              <img class="object-cover h-48 w-64 rounded-lg shadow-2xl" :src="post.imageUrl">
+              <PostImage :src="post.imageSrc" :alt="post.title" class="object-cover h-48 w-64 rounded-lg shadow-2xl"/>
             </nuxt-link>
           </div>
           <div class="md:flex-grow">

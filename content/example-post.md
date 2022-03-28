@@ -5,7 +5,7 @@ category: Programming
 tags:
 - C#
 - Research
-imageUrl: https://i.imgur.com/bs0iSCT.png
+imageSrc: example.png
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra egestas magna. Morbi gravida condimentum egestas. Vivamus ullamcorper odio ut magna consequat, congue pulvinar dui tempus. Vivamus quis congue justo. Etiam hendrerit, justo in porta auctor, tellus ex sagittis tortor, id egestas turpis urna at mi. Cras velit enim, condimentum ut nisi vitae, dapibus sagittis tortor. Curabitur finibus odio eget mauris feugiat euismod. Maecenas malesuada, nibh ac interdum finibus, ante dolor ultricies lacus, nec tristique erat turpis nec arcu.
@@ -17,6 +17,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra eg
 var json = {...};
 var jsonDeserializeObject = JsonConvert.DeserializeObject<Object>(json);
 ```
+
+<PostImage src="example.png" alt="example" class="w-64" />
 
 # Example Title 1
 
