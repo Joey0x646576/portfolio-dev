@@ -71,11 +71,14 @@ export default {
     return {
       title: this.post.title,
       meta: [
+        { hid: 'title', name: 'title', content: this.post.title},
+        { hid: 'og:title', name: 'og:title', content: this.post.title},
+        { hid: 'twitter:title', name: 'twitter:title', content: this.post.title},
         { hid: 'description', name: 'description', content: this.post.description},
         { hid: 'og:description', name: 'og:description', content: this.post.description},
         { hid: "twitter:description", name: "twitter:description", content: this.post.description },
         { hid: 'og:type', property: 'og:type', content: 'article' },
-        { hid: 'og:image', property: 'og:image', content: this.post.imageSrc ? `${this.$config.BASE_URL}/_nuxt/assets/images/${this.post.imageSrc}` : null },
+        { hid: 'og:image', property: 'og:image', content: this.post.imageSrc ? this.$config.BASE_URL + require(`~/assets/images/${this.post.imageSrc}`) : null },
         { hid: 'og:url', property: 'og:url', content: `${this.$config.BASE_URL}/posts/${this.post.slug}` },
 
         {
