@@ -42,7 +42,7 @@
           <div v-for="repository in repositories.items" :key="repository.id" class="w-full md:w-2/4">
             <RepositoryCard :repository="repository" />
           </div>
-          <p class="p-1 flex flex-1 justify-center items-center mt-8 md:mt-0">Do you want to see more? Visit my <a :href="`https://github.com/${$config.GITHUB_USERNAME}`" class="border-dotted border-b border-indigo-500 transition ease-in-out hover:bg-indigo-500 duration-300 ml-1">Github</a></p>
+          <p class="p-12 lg:p-1 lg:flex flex-1 justify-center items-center mt-8 md:mt-0">Do you want to see more? Visit my <a :href="`https://github.com/${$config.GITHUB_USERNAME}`" class="border-dotted border-b border-indigo-500 transition ease-in-out hover:bg-indigo-500 duration-300 ml-1">Github</a></p>
         </template>
         <template v-else>
           <p class="p-1 flex flex-col justify-center items-center mt-8 md:mt-0 w-full text-red-500">Unable to retrieve content for Github user: {{$config.GITHUB_USERNAME}}</p>

@@ -16,7 +16,7 @@
     <section class="content">
       <h1 class="text-6xl font-bold mb-6">{{post.title}}</h1>
       <PostTag :tags="post.tags"/>
-      <nuxt-content :document="post" class="prose dark:prose-dark prose-lg mx-auto max-w-none mt-5"/>
+      <nuxt-content :document="post" class="prose prose-dark prose-lg mx-auto max-w-none mt-5"/>
     </section>
     <!-- End displays the md file -->
 
@@ -72,14 +72,19 @@ export default {
       title: this.post.title,
       meta: [
         { hid: 'title', name: 'title', content: this.post.title},
-        { hid: 'og:title', name: 'og:title', content: this.post.title},
-        { hid: 'twitter:title', name: 'twitter:title', content: this.post.title},
         { hid: 'description', name: 'description', content: this.post.description},
+
+
+        { hid: 'og:title', name: 'og:title', content: this.post.title},
         { hid: 'og:description', name: 'og:description', content: this.post.description},
-        { hid: "twitter:description", name: "twitter:description", content: this.post.description },
+        { hid: 'og:url', property: 'og:url', content: `${this.$config.BASE_URL}/posts/${this.post.slug}` },
         { hid: 'og:type', property: 'og:type', content: 'article' },
         { hid: 'og:image', property: 'og:image', content: this.post.imageSrc ? this.$config.BASE_URL + require(`~/assets/images/${this.post.imageSrc}`) : null },
-        { hid: 'og:url', property: 'og:url', content: `${this.$config.BASE_URL}/posts/${this.post.slug}` },
+
+        { hid: 'twitter:title', name: 'twitter:title', content: this.post.title},
+        { hid: "twitter:description", name: "twitter:description", content: this.post.description },
+        { hid: 'twitter:image', property: 'twitter:image', content: this.post.imageSrc ? this.$config.BASE_URL + require(`~/assets/images/${this.post.imageSrc}`) : null },
+        { hid: 'twitter:title', property: 'twitter:title', content: `${this.$config.BASE_URL}/posts/${this.post.slug}` },
 
         {
           property: "article:published_time",
