@@ -61,7 +61,7 @@ export default {
     const limit = 3;
 
     // Retrieve content module posts
-    const posts = await $content()
+    const posts = await $content('posts')
       .limit(limit)
       .sortBy('createdAt', 'desc')
       .fetch();

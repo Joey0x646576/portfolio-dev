@@ -53,7 +53,7 @@ export default {
 
     const [previous, next] = await $content().only(['path']).sortBy('createdAt', 'desc').surround(params.slug).fetch();
 
-    const post = await $content(params.slug).fetch()
+    const post = await $content(`posts/${params.slug}`).fetch()
     .catch(() => error({
       statusCode: 404,
       message: 'This page does not exist...'

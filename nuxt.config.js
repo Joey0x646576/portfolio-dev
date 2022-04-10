@@ -1,3 +1,5 @@
+import getRoutes from './helpers/getRoutes'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'server',
@@ -92,15 +94,9 @@ export default {
   // Sitemap Configuration: https://sitemap.nuxtjs.org/usage/sitemap-options#from-a-function-which-returns-a-promise
   sitemap: {
     hostname: process.env.BASE_URL,
-    routes: async () => {
-      const { $content } = require('@nuxt/content')
-
-      const posts = await $content()
-        .only(['path'])
-        .fetch()
-
-      return posts.map((p) => p.path)
-    }
+    routes() {
+      return getRoutes();
+    },
   },
 
   googleAnalytics: {

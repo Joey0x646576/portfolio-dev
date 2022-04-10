@@ -21,7 +21,7 @@ export default{
     const limit = 5;
     const page = 1;
 
-    const posts = await $content()
+    const posts = await $content('posts')
       .limit(limit)
       .sortBy('createdAt', 'desc')
       .fetch();
