@@ -35,4 +35,10 @@ GOOGLE_ANALYTICS_ID=UA-XXX-X
 
 To start writing content, take a look at the `example-post.md` in the `content` directory.
 
+## Preview
+
 Want to see a preview? Checkout my personal [portfolio](https://joeysenna.com) page
+
+![image](https://user-images.githubusercontent.com/9116413/211534561-d214ccc9-f42b-494a-b749-de37f223b24a.png)
+
+
